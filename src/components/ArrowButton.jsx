@@ -1,13 +1,20 @@
-import React from 'react'
+import React from "react";
 
-const ArrowButton = ({arrowName, position, functionToScroll}) => {
- console.log(position);
- 
+const ArrowButton = ({ arrowName, position, functionToScroll }) => {
+  console.log(position);
+
   return (
-    <div className={`absolute ${position}-0 h-full flex ${position==="left"?"bg-gradient-to-r pr-10 pl-2":"bg-gradient-to-l pl-10 pr-2"} from-white via-white`}>
-        <img src={arrowName} alt="" className="w-5 cursor-pointer" onClick={()=>{functionToScroll()}}/>
+    <div className={`w-7 ${position==="left"?"bg-gradient-to-r":"bg-gradient-to-l"} from-white via-white`}>
+      <img
+        src={arrowName}
+        alt=""
+        className="w-5 h-full cursor-pointer pt-[1px]"
+        onClick={() => {
+          functionToScroll();
+        }}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default ArrowButton
+export default ArrowButton;

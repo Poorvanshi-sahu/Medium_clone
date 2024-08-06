@@ -23,7 +23,6 @@ const Home = () => {
   const tabStatus = (index) =>{
     console.log("yes");
     setActive(index)
-
   }
 
   const scrollLeft = () => {
@@ -44,26 +43,46 @@ const Home = () => {
     }
   };
 
-
   return (
-    <div className="flex h-full relative">
-      <div className="left w-full sm:w-71 pt-5">
-        <div className={`m-auto w-10/12 border-b-[1px] leading-[4rem] flex items-center relative`} >
-          {
-            isScrolling? <ArrowButton arrowName={ArrowLeft} position="left" functionToScroll={scrollLeft}/> : <img src={Add} alt="Add" className="w-5 cursor-pointer hover:text-black-900 hover:bg-gray-back hover:rounded-full h-max mr-7"/>
-        }
-        <div className="flex items-center scrollable text-sm leading-[4rem] font-semibold overflow-x-auto" ref={scrollContainerRef} onScroll={handleScroll}>
+    // <div className="flex h-full relative">
+    //   <div className="left w-full sm:w-71 pt-5">
+    //     <div className={`m-auto w-10/12 border-b-[1px] leading-[4rem] flex items-center relative`} >
+    //       {
+    //         isScrolling? <ArrowButton arrowName={ArrowLeft} position="left" functionToScroll={scrollLeft}/> : <img src={Add} alt="Add" className="w-5 cursor-pointer hover:text-black-900 hover:bg-gray-back hover:rounded-full h-max mr-7"/>
+    //     }
+    //     <div className="flex items-center scrollable text-sm leading-[4rem] font-semibold overflow-x-auto " ref={scrollContainerRef} onScroll={handleScroll}>
+    //     {
+    //            names.map((name,index)=>{
+    //                return <Category name={name} index={index} key={index} onClick={tabStatus} active={active===index}/>
+    //             })
+    //         }
+    //     </div>
+    //       <ArrowButton arrowName={ArrowRight} position="right" functionToScroll={scrollRight} />
+    //     </div>
+    //   </div>
+    //   <div className="hidden sm:flex right w-38 border-l-[1px] sticky py-9 px-9">ksjfks</div>
+    // </div>
+
+    <div className="h-full flex">
+    <div className="left w-full sm:w-71 pt-10">
+        <div className="m-auto w-10/12 flex items-start relative">
         {
-               names.map((name,index)=>{
-                   return <Category name={name} index={index} key={index} onClick={tabStatus} active={active===index}/>
-                })
-            }
+            isScrolling? <ArrowButton arrowName={ArrowLeft} position="left" functionToScroll={scrollLeft}/> : <img src={Add} alt="Add" className="w-5 pt-[1px] cursor-pointer hover:text-black-900 hover:bg-gray-back hover:rounded-full"/>
+       }
+            <div className="flex overflow-x-scroll scrollable text-[0.9rem] px-4 relative z-10" ref={scrollContainerRef} onScroll={handleScroll}>
+                {
+                    names.map((name, index)=>{
+                        return <Category name={name} key={index} index={index} active={active===index} onClick={tabStatus} />
+                    })
+                }
+            </div>
+        <ArrowButton arrowName={ArrowRight} position={"right"} functionToScroll={scrollRight}/>
+        <div className="w-full top-10 absolute h-[1px] bg-gray-back -z-0"></div>
         </div>
-          <ArrowButton arrowName={ArrowRight} position="right" functionToScroll={scrollRight} />
-        </div>
-      </div>
-      <div className="hidden sm:flex right w-38 border-l-[1px] sticky py-9 px-9">ksjfks</div>
+      
     </div>
+    <div className="hidden sm:flex right w-38 border-l-[1px] sticky py-9 px-9">ksjfks</div>
+  </div>
   );
 };
 

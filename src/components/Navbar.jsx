@@ -6,7 +6,7 @@ import Menu from "../assets/menu_line.svg"
 
 const Navbar = () => {
   return (
-    <div className='section border-b-[1px] flex justify-between px-6 py-2.5 text-black text-sm w-full'>
+    <div className='section border-b-[1px] flex justify-between px-6 py-[0.675rem] md:py-2.5 text-black text-sm w-full'>
          <div className='left flex'>
             <h1 className='text-3xl capitalize font-serif font-bold'>Medium</h1>
             <div className='hidden md:flex flex items-center bg-gray-light rounded-2xl w-24 ml-6 px-3 py-1'>

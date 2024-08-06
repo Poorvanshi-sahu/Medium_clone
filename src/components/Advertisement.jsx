@@ -2,7 +2,7 @@ import React from "react";
 
 const Advertisement = () => {
   return (
-    <div className="bg-gradient-to-r from-texture-1 via-texture-2 to-texture-3 text-center py-3 px-6">
+    <div className="bg-gradient-to-r from-texture-1 via-texture-2 to-texture-3 text-center py-4 md:py-3 px-6">
       <h2 >
         <span className="font-bold text-black-900 tracking-tighter">
         Be part of a better internet. &nbsp;
