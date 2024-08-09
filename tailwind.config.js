@@ -13,16 +13,20 @@ export default {
         "texture-2":"#FEE34D",
         "texture-3":"#FFA90E",
         "black-900":"#242424",
-        "gray-back":"#F2F2F2"
+        "gray-back":"#F2F2F2",
+        "text-light":"#B3B3B1"
       },
       fontFamily:{
-        'serif':["Bodoni Moda", "serif"],
+        'Serif':["Bodoni Moda", "serif"],
         'Inter':["Inter", "sans-serif"],
       },
       width:{
+        "24":"24%",
         "38":"35%",
-        "71":"65%"
-      }
+        "60":"69%",
+        "71":"65%",
+        "80":"78%"
+      },
     },
   },
   plugins: [],

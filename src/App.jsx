@@ -1,18 +1,18 @@
-import Advertisement from './components/Advertisement'
-import Home from './components/Home'
-import Navbar from './components/Navbar'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import WriteArticle from "./pages/WriteArticle";
 
 function App() {
-
   return (
     <>
-    <div className='w-screen'>
-        <Navbar/>
-        <Advertisement/>
-        <Home/>
-    </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/write" element={<WriteArticle/>}/>
+        </Routes>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
